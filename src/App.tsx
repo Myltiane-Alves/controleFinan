@@ -6,7 +6,7 @@ import { ListItem } from './components/ListItem';
 const App = () => {
   const [list, setList] = useState<Item[]>([
     {id: 1, name: 'Comprar a Pizza na pizzaria', done: false},
-    {id: 2, name: 'Comprar a Pastel na Pastelaria', done: false}
+    {id: 2, name: 'Comprar a Pastel na Pastelaria', done: true}
   ]);
 
   return (
@@ -15,7 +15,7 @@ const App = () => {
         <C.Header>Lista de Tarefas</C.Header>
 
           {list.map((item, index)=>(
-            <ListItem />
+            <ListItem key={index} item={item} />
           ))}
 
       </C.Area>
